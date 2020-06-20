@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <title>@ViewBag.Title - FKendir.com</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+</head>
+<body>
+
+    <header id="header">
+        <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    
+                    <a class="navbar-brand" href="/Home/Index">
+                        <img src="~/Dosyalar/logo.png"style="width:60px;height:60px" /></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav custom_nav">
+                        <li class="active"><a href="/Home/Index">Anasayfa</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kategoriler</a>
+                            <ul class="dropdown-menu" role="menu">
+                                @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                                {
+                                    foreach (var b in db.kategoriler.ToList())
+                                    {
+                                <li>
+                                    @Html.ActionLink(@b.kategori, "Sirali_Haber", "Home", new { b.katid }, new { htmlAttributes = new { @class = "btn btn-primary" } })
+
+
+                                </li>
+                                    }
+                                }
+                            </ul>
+                        </li>
+                        <li><a href="/Home/Hakkimizda">Hakkımızda</a></li>
+                        <li><a href="/mesajlars/Create">İletisim</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="search" style="float:right">
+                    <a class="search_icon" href="#"><i class="fa fa-search"></i></a>
+
+                    @using (Html.BeginForm("Arama_Sonuclari", "Home"))
+                    {
+                        @Html.TextBox("Aranacakkelime", null, new { @placeholder = "Site de arama", @class = "search_bar " })
+
+
+                    }
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+        @RenderBody()
+        <hr />
+        <footer id="footer">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-sm2">
+                            <div class="footer_widget wow fadeInLeftBig">
+                                <h2>Kategoriler</h2>
+                                <ul class="labels_nav">
+                                    @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                                    {
+                                        foreach (var b in db.kategoriler.ToList())
+                                        {
+                                            <li>
+                                                @Html.ActionLink(@b.kategori, "Sirali_Haber", "Home", new { b.katid }, new { htmlAttributes = new { @class = "btn btn-primary" } })
+
+
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm3">
+                            <div class="footer_widget wow fadeInRightBig">
+                                <h2>En Çok Okunanlar</h2>
+                                <ul class="ppost_nav wow fadeInLeftBig">
+                                        @using (proje_blog.DAL.MyBlogSiteEntities veri = new proje_blog.DAL.MyBlogSiteEntities())
+                                        {
+                                            foreach (var son in veri.gonderiler.OrderByDescending(x => x.tiklanma_say).Take(3).ToList())
+                                            {
+                                                <li>
+                                                    <div class="media">
+                                                        <img src="@son.resim" style="width:70px;height:70px" alt="">
+                                                        <div class="media-body">
+
+                                                            @Html.ActionLink(@proje_blog.Models.htmltemiz.HTMLTemizler(son.gonderi), "Haber_Detay", "Home", new { son.gonderiid }, new { @class = "media-left" })
+
+
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            }
+
+                                        }
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm4">
+                            <div class="footer_widget wow fadeInRightBig">
+                                <h2>Son Eklenenler</h2>
+                                <ul class="ppost_nav wow fadeInLeftBig">
+                                        @using (proje_blog.DAL.MyBlogSiteEntities veri2 = new proje_blog.DAL.MyBlogSiteEntities())
+                                        {
+                                            foreach (var ekle in veri2.gonderiler.OrderByDescending(x => x.saat).Take(3).ToList())
+                                            {
+                                                <li>
+                                                    <div class="media">
+                                                        <img src="@ekle.resim" style="width:70px;height:70px" alt="">
+                                                        <div class="media-body">
+                                                            @Html.ActionLink(@proje_blog.Models.htmltemiz.HTMLTemizler(ekle.gonderi), "Haber_Detay", "Home", new { ekle.gonderiid }, new { htmlAttributes = new { @class = "media-left  " } })
+
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            }
+                                        }
+
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm3">
+                            <div class="footer_widget wow fadeInRightBig">
+                                <h2>İletişim ve Bilgi</h2>
+                                <form action="#" class="subscribe_form">
+                                    @using (proje_blog.DAL.MyBlogSiteEntities veri = new proje_blog.DAL.MyBlogSiteEntities())
+                                    {
+                                        foreach (var liste in veri.kullanicilar.ToList())
+                                        { <p id="subscribe-text">@proje_blog.Models.htmltemiz.HTMLTemizlerr(liste.hakkinda)</p>}
+
+                                    }
+                                    <a href="/mesajlars/Create" style="color:#ffffff">Siteye Yazın</a>
+
+
+                                    }
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="container">
+                    <p class="copyright">Tüm haklar şahsıma aittir &copy; @DateTime.Now.Year <a href="/Home/Index">FKendir.com</a></p>
+                    <p class="developer">@DateTime.Now.ToShortTimeString()</p>
+                </div>
+            </div>
+        </footer>
+
+</body>
+</html>
+<script src="~/assets/js/jquery.min.js"></script>
+<script src="~/assets/js/wow.min.js"></script>
+<script src="~/assets/js/bootstrap.min.js"></script>
+<script src="~/assets/js/slick.min.js"></script>
+<script src="~/assets/js/custom.js"></script>
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>tinymce.init({ selector: 'textarea' });</script>

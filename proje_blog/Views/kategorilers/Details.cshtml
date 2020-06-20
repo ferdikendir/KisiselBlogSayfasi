@@ -1,0 +1,67 @@
+﻿@model proje_blog.DAL.kategoriler
+
+@{
+    ViewBag.Title = "Kategori Detay";
+
+    Layout = "~/Views/Shared/_Layouttwo.cshtml";
+}
+<div id="page-wrapper">
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">Kategori Sil</h1>
+        </div>
+        <!--End Page Header -->
+        <div class="col-lg-12">
+            <div class="alert alert-info">
+                @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                {
+                    foreach (var item in db.kullanicilar.ToList())
+                    {
+                        <marquee behavior=alternate><i class="fa fa-folder-open"></i><b>&nbsp;Merhaba ! </b><b>&nbsp;Hoş Geldiniz </b><b>@item.adi @item.soyadi</b></marquee>
+
+                        <marquee behavior=alternate><i class="fa  fa-pencil"></i><b>&nbsp; @db.gonderiler.Count() </b><b>&nbsp;adet gönderiniz bulunmakta!</b></marquee>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Model.kategori kategorisi
+            </div>
+            <div class="panel-body">
+                <div>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Kategori:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.kategori)
+                        </dd>
+                        
+                       
+
+                    </dl>
+                    @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                    {
+                        int sayac = 0;
+                        foreach (var i in db.gonderiler.ToList())
+                        {
+                            if (i.katid == Model.katid)
+                                sayac += 1;
+                        }
+                        <h3>@Model.kategori kategorisine ait @sayac adet gönderi bulunmaktadır. </h3>
+                    }
+                </div>
+                <p>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = Model.katid }, new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Geri Dön", "Index", new { @class = "btn btn-default" })
+                </p>
+            </div>
+            </div>
+</div>
+</div>

@@ -1,0 +1,195 @@
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\ApplicationInsights.config
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\csc.exe
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\vbc.exe
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\proje_blog.dll.config
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\proje_blog.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\proje_blog.pdb
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\EntityFramework.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\EntityFramework.SqlServer.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\PagedList.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\PagedList.Mvc.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\EntityFramework.xml
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\EntityFramework.SqlServer.xml
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\PagedList.xml
+C:\Users\Coder\Desktop\proje_blog\proje_blog\bin\PagedList.Mvc.xml
+C:\Users\Coder\Desktop\proje_blog\proje_blog\obj\Debug\proje_blog.dll
+C:\Users\Coder\Desktop\proje_blog\proje_blog\obj\Debug\proje_blog.pdb
+C:\Users\Coder\Desktop\proje_blog\proje_blog\obj\Debug\proje_blog.csprojResolveAssemblyReference.cache
+H:\proje_blog\proje_blog\bin\ApplicationInsights.config
+H:\proje_blog\proje_blog\bin\roslyn\csc.exe
+H:\proje_blog\proje_blog\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+H:\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+H:\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.dll
+H:\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+H:\proje_blog\proje_blog\bin\roslyn\Microsoft.CSharp.Core.targets
+H:\proje_blog\proje_blog\bin\roslyn\Microsoft.VisualBasic.Core.targets
+H:\proje_blog\proje_blog\bin\roslyn\System.Collections.Immutable.dll
+H:\proje_blog\proje_blog\bin\roslyn\System.Reflection.Metadata.dll
+H:\proje_blog\proje_blog\bin\roslyn\vbc.exe
+H:\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe
+H:\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe.config
+H:\proje_blog\proje_blog\bin\proje_blog.dll.config
+H:\proje_blog\proje_blog\bin\proje_blog.dll
+H:\proje_blog\proje_blog\bin\proje_blog.pdb
+H:\proje_blog\proje_blog\bin\EntityFramework.dll
+H:\proje_blog\proje_blog\bin\EntityFramework.SqlServer.dll
+H:\proje_blog\proje_blog\bin\PagedList.dll
+H:\proje_blog\proje_blog\bin\PagedList.Mvc.dll
+H:\proje_blog\proje_blog\bin\EntityFramework.xml
+H:\proje_blog\proje_blog\bin\EntityFramework.SqlServer.xml
+H:\proje_blog\proje_blog\bin\PagedList.xml
+H:\proje_blog\proje_blog\bin\PagedList.Mvc.xml
+H:\proje_blog\proje_blog\obj\Debug\proje_blog.csprojResolveAssemblyReference.cache
+H:\proje_blog\proje_blog\obj\Debug\proje_blog.dll
+H:\proje_blog\proje_blog\obj\Debug\proje_blog.pdb
+G:\proje_blog\proje_blog\bin\ApplicationInsights.config
+G:\proje_blog\proje_blog\bin\roslyn\csc.exe
+G:\proje_blog\proje_blog\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\proje_blog\proje_blog\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\proje_blog\proje_blog\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\proje_blog\proje_blog\bin\roslyn\System.Collections.Immutable.dll
+G:\proje_blog\proje_blog\bin\roslyn\System.Reflection.Metadata.dll
+G:\proje_blog\proje_blog\bin\roslyn\vbc.exe
+G:\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe
+G:\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe.config
+G:\proje_blog\proje_blog\bin\proje_blog.dll.config
+G:\proje_blog\proje_blog\bin\proje_blog.dll
+G:\proje_blog\proje_blog\bin\proje_blog.pdb
+G:\proje_blog\proje_blog\bin\EntityFramework.dll
+G:\proje_blog\proje_blog\bin\EntityFramework.SqlServer.dll
+G:\proje_blog\proje_blog\bin\PagedList.dll
+G:\proje_blog\proje_blog\bin\PagedList.Mvc.dll
+G:\proje_blog\proje_blog\bin\EntityFramework.xml
+G:\proje_blog\proje_blog\bin\EntityFramework.SqlServer.xml
+G:\proje_blog\proje_blog\bin\PagedList.xml
+G:\proje_blog\proje_blog\bin\PagedList.Mvc.xml
+G:\proje_blog\proje_blog\obj\Debug\proje_blog.csprojResolveAssemblyReference.cache
+G:\proje_blog\proje_blog\obj\Debug\proje_blog.dll
+G:\proje_blog\proje_blog\obj\Debug\proje_blog.pdb
+F:\proje_blog\proje_blog\bin\ApplicationInsights.config
+F:\proje_blog\proje_blog\bin\roslyn\csc.exe
+F:\proje_blog\proje_blog\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\proje_blog\proje_blog\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\proje_blog\proje_blog\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\proje_blog\proje_blog\bin\roslyn\System.Collections.Immutable.dll
+F:\proje_blog\proje_blog\bin\roslyn\System.Reflection.Metadata.dll
+F:\proje_blog\proje_blog\bin\roslyn\vbc.exe
+F:\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe
+F:\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe.config
+F:\proje_blog\proje_blog\bin\proje_blog.dll.config
+F:\proje_blog\proje_blog\bin\proje_blog.dll
+F:\proje_blog\proje_blog\bin\proje_blog.pdb
+F:\proje_blog\proje_blog\bin\EntityFramework.dll
+F:\proje_blog\proje_blog\bin\EntityFramework.SqlServer.dll
+F:\proje_blog\proje_blog\bin\PagedList.dll
+F:\proje_blog\proje_blog\bin\PagedList.Mvc.dll
+F:\proje_blog\proje_blog\bin\EntityFramework.xml
+F:\proje_blog\proje_blog\bin\EntityFramework.SqlServer.xml
+F:\proje_blog\proje_blog\bin\PagedList.xml
+F:\proje_blog\proje_blog\bin\PagedList.Mvc.xml
+F:\proje_blog\proje_blog\obj\Debug\proje_blog.csprojResolveAssemblyReference.cache
+F:\proje_blog\proje_blog\obj\Debug\proje_blog.dll
+F:\proje_blog\proje_blog\obj\Debug\proje_blog.pdb
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\ApplicationInsights.config
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\csc.exe
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\vbc.exe
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\proje_blog.dll.config
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\proje_blog.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\proje_blog.pdb
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\EntityFramework.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\EntityFramework.SqlServer.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\PagedList.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\PagedList.Mvc.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\EntityFramework.xml
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\EntityFramework.SqlServer.xml
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\PagedList.xml
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\bin\PagedList.Mvc.xml
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\obj\Debug\proje_blog.csprojResolveAssemblyReference.cache
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\obj\Debug\proje_blog.dll
+C:\Users\ferdi\Desktop\proje_blog\proje_blog\obj\Debug\proje_blog.pdb
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\ApplicationInsights.config
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\csc.exe
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\System.Collections.Immutable.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\System.Reflection.Metadata.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\vbc.exe
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe.config
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\proje_blog.dll.config
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\proje_blog.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\proje_blog.pdb
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\EntityFramework.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\EntityFramework.SqlServer.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\PagedList.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\PagedList.Mvc.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\EntityFramework.xml
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\EntityFramework.SqlServer.xml
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\PagedList.xml
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\PagedList.Mvc.xml
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\obj\Debug\proje_blog.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\obj\Debug\proje_blog.pdb
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\Aliencube.HtmlHelper.Extended.dll
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\Aliencube.HtmlHelper.Extended.pdb
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\bin\Aliencube.HtmlHelper.Extended.xml
+D:\17-18 bahar\zımbırtılar\proje_blog\proje_blog\obj\Debug\proje_blog.csprojResolveAssemblyReference.cache
+E:\zımbırtılar\proje_blog\proje_blog\bin\ApplicationInsights.config
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\csc.exe
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\System.Collections.Immutable.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\System.Reflection.Metadata.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\vbc.exe
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe
+E:\zımbırtılar\proje_blog\proje_blog\bin\roslyn\VBCSCompiler.exe.config
+E:\zımbırtılar\proje_blog\proje_blog\bin\proje_blog.dll.config
+E:\zımbırtılar\proje_blog\proje_blog\bin\proje_blog.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\proje_blog.pdb
+E:\zımbırtılar\proje_blog\proje_blog\bin\Aliencube.HtmlHelper.Extended.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\EntityFramework.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\EntityFramework.SqlServer.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\PagedList.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\PagedList.Mvc.dll
+E:\zımbırtılar\proje_blog\proje_blog\bin\Aliencube.HtmlHelper.Extended.pdb
+E:\zımbırtılar\proje_blog\proje_blog\bin\Aliencube.HtmlHelper.Extended.xml
+E:\zımbırtılar\proje_blog\proje_blog\bin\EntityFramework.xml
+E:\zımbırtılar\proje_blog\proje_blog\bin\EntityFramework.SqlServer.xml
+E:\zımbırtılar\proje_blog\proje_blog\bin\PagedList.xml
+E:\zımbırtılar\proje_blog\proje_blog\bin\PagedList.Mvc.xml
+E:\zımbırtılar\proje_blog\proje_blog\obj\Debug\proje_blog.csprojResolveAssemblyReference.cache
+E:\zımbırtılar\proje_blog\proje_blog\obj\Debug\proje_blog.dll
+E:\zımbırtılar\proje_blog\proje_blog\obj\Debug\proje_blog.pdb

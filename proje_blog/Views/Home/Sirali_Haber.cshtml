@@ -1,0 +1,181 @@
+﻿@model IPagedList<proje_blog.DAL.gonderiler>
+
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Sirali_Haber";
+}
+
+<br/>
+<br />
+<br />
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="left_sidebar">
+                <div class="single_widget">
+                    <h2>En çok okunanlar</h2>
+                    <ul class="ppost_nav" style="overflow:auto;height:1840px;overflow-x:hidden">
+                        @using (proje_blog.DAL.MyBlogSiteEntities veri = new proje_blog.DAL.MyBlogSiteEntities())
+                        {
+                            foreach (var son in veri.gonderiler.OrderByDescending(x => x.tiklanma_say).Take(5).ToList())
+                            {
+                                <li>
+                                    <figure class="effect-lily">
+                                        <img src="@son.resim" alt="">
+                                        <figcaption>
+                                                @Html.ActionLink(@proje_blog.Models.htmltemiz.HTMLTemizler(son.gonderi), "Haber_Detay", "Home", new { son.gonderiid }, new { @class = "" })
+                                          
+                                        </figcaption>
+                                        <h6> @son.tiklanma_say kez okundu</h6>
+                                    </figure>
+                                    @Html.ActionLink("Devamını oku..", "Haber_Detay", "Home", new { son.gonderiid }, new { @class = "btn  " })
+                                </li>
+
+
+                            }
+
+
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-5 col-md-5 col-sm-5">
+            <div class="middle_content">
+               @using (proje_blog.DAL.MyBlogSiteEntities veri1 = new proje_blog.DAL.MyBlogSiteEntities())
+               {
+                   foreach (var a in Model)
+                   {
+                       foreach (var i in veri1.kategoriler.ToList())
+                       {
+                           if (i.katid == a.katid)
+                           {
+                            <h2>@i.kategori</h2>
+
+                           }
+
+                       }
+                       break;
+                   }
+
+
+                <ul class="featured_nav"style="height:1650px">
+                   
+
+                        @foreach (var tum in Model)
+                        {
+                            var kat = veri1.kategoriler.Where(x => x.katid == tum.katid).SingleOrDefault();
+                            <li class="wow fadeInDown">
+                                <figure class="featured_img"><img src="@tum.resim" alt=""></figure>
+                                <article class="featured_article">
+                                    <div class="article_category">
+                                        <h1>@Html.ActionLink(@tum.baslik, "Haber_Detay", "Home", new { tum.gonderiid }, new { htmlAttributes = new { @class = "btn article_titile" } })
+</h1>
+                                    </div>
+                                    <p>
+                                        @proje_blog.Models.htmltemiz.HTMLTemizle(tum.gonderi)
+
+                                    </p>
+                                </article>
+                                @Html.ActionLink("Detay", "Haber_Detay", "Home", new { tum.gonderiid }, new { @class = "btn btn-default" })
+                            </li>
+                       
+                        }
+                    
+                   
+                </ul>}
+                @Html.PagedListPager(Model, _sayfaNo => Url.Action("Sirali_Haber", "Home", new { sayfaNo = _sayfaNo }))
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="right_sidebar">
+                <div class="single_widget">
+                    <h2>Son Eklenenler</h2>
+                    <ul class="ppost_nav wow fadeInDown">
+                        @using (proje_blog.DAL.MyBlogSiteEntities veri2 = new proje_blog.DAL.MyBlogSiteEntities())
+                        {
+                            foreach (var ekle in veri2.gonderiler.OrderByDescending(x => x.saat).Take(5).ToList())
+                            {
+                                <li>
+                                    <div class="media">
+                                        <img src="@ekle.resim" style="width:70;height:70px" alt="">
+                                        <div class="media-body">
+                                                @Html.ActionLink(@proje_blog.Models.htmltemiz.HTMLTemizler(ekle.gonderi), "Haber_Detay", "Home", new { ekle.gonderiid }, new { htmlAttributes = new { @class = "btn " } })
+                                          
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        }
+
+
+                    </ul>
+                </div>
+                <div class="single_widget" style="overflow:auto;overflow-x:hidden">
+                    <ul class="nav nav-tabs custom-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">En Kısalar</a></li>
+                       
+                        <li role="presentation" class=""><a href="#recentComent" aria-controls="messages" role="tab" data-toggle="tab" aria-expanded="false">Uzun Başlıklar</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        @using (proje_blog.DAL.MyBlogSiteEntities veri3 = new proje_blog.DAL.MyBlogSiteEntities())
+                        {
+                            <div role="tabpanel" class="tab-pane fade active in" id="mostPopular">
+                                <ul class="ppost_nav wow fadeInDown">
+                                    @foreach (var liste2 in veri3.gonderiler.Where(x => x.gonderi.Length <= 55).ToList())
+                {
+
+                                        <li>
+                                            <div class="media">
+                                                
+                                                <div class="media-body">@Html.ActionLink(@liste2.baslik, "Haber_Detay", "Home", new { liste2.gonderiid }, new { htmlAttributes = new { @class = "btn catg_title" } })</div>
+                                                <img src="@liste2.resim" style="width:70px;height:70px" alt="">
+                                            </div>
+                                        </li>
+
+
+                                    }
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="recentComent">
+                                <ul class="ppost_nav wow fadeInDown">
+                                    @foreach (var liste3 in veri3.gonderiler.Where(x => x.baslik.Length >= 50).ToList())
+                                    {
+                                        <li>
+                                            <div class="media">
+                                                <img src="@liste3.resim" style="width:70px;height:70px" alt="">
+                                                <div class="media-body">@Html.ActionLink(@liste3.baslik, "Haber_Detay", "Home", new { liste3.gonderiid }, new { htmlAttributes = new { @class = "btn catg_title" } })</div>
+                                            </div>
+                                        </li>
+
+                                    }
+                                </ul>
+                            </div>
+                        }
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="single_widget">
+                    <h2>Bizi Takip edin</h2>
+                    <span class="panel-eyecandy-title">
+                        <script language="javascript" src="http://ic.sitekodlari.com/paylas2.js"></script>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,113 @@
+﻿@model proje_blog.DAL.kullanicilar
+
+@{
+    ViewBag.Title = "Kullanıcı Detay";
+    Layout = "~/Views/Shared/_Layouttwo.cshtml";
+}
+<div id="page-wrapper">
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">Kullanıcı Detay</h1>
+        </div>
+        <!--End Page Header -->
+        <div class="col-lg-12">
+            <div class="alert alert-info">
+                @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                {
+                    foreach (var item in db.kullanicilar.ToList())
+                    {
+                        <marquee behavior=alternate><i class="fa fa-folder-open"></i><b>&nbsp;Merhaba ! </b><b>&nbsp;Hoş Geldiniz </b><b>@item.adi @item.soyadi</b></marquee>
+
+                        <marquee behavior=alternate><i class="fa  fa-pencil"></i><b>&nbsp; @db.gonderiler.Count() </b><b>&nbsp;adet gönderiniz bulunmakta!</b></marquee>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Model.adi @Model.soyadi
+            </div>
+            <div class="panel-body">
+                <div>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Adı:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.adi)
+                        </dd>
+
+                        <dt>
+                            Soyadı:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.soyadi)
+                        </dd>
+
+                        <dt>
+                            Mail:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.mail)
+                        </dd>
+
+                        <dt>
+                            Şifre:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.sifre)
+                        </dd>
+
+                        <dt>
+                            Hakkında:
+                        </dt>
+
+                        <dd>
+                            @proje_blog.Models.htmltemiz.HTMLTemizle(Model.hakkinda)
+                        </dd>
+
+                        <dt>
+                            Telefon:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.telefon)
+                        </dd>
+
+                        <dt>
+                            Takma ad:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.nick)
+                        </dd>
+
+                        <dt>
+                            Resim:
+                        </dt>
+
+                        <dd>
+                            <div class="user-section-inner">
+                                <img src="@Model.resim" />
+                            </div>
+                        </dd>
+
+                    </dl>
+                </div>
+                <p>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = Model.id }) |
+                    @Html.ActionLink("İptal", "Index")
+                </p>
+            </div>
+            </div>
+        </div>
+    </div>

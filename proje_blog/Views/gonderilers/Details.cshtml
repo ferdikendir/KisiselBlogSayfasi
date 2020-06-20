@@ -1,0 +1,96 @@
+﻿@model proje_blog.DAL.gonderiler
+
+@{
+    ViewBag.Title = "Gönderi Detayı";
+    Layout = "~/Views/Shared/_Layouttwo.cshtml";
+}
+
+<div id="page-wrapper">
+
+    <div class="row">
+
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">Gönderiler Detayı</h1>
+        </div>
+        <!--End Page Header -->
+        <div class="col-lg-12">
+            <div class="alert alert-info">
+                @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                {
+                    foreach (var item in db.kullanicilar.ToList())
+                    {
+                        <marquee behavior=alternate><i class="fa fa-folder-open"></i><b>&nbsp;Merhaba ! </b><b>&nbsp;Hoş Geldiniz </b><b>@item.adi @item.soyadi</b></marquee>
+
+                        <marquee behavior=alternate><i class="fa  fa-pencil"></i><b>&nbsp; @db.gonderiler.Count() </b><b>&nbsp;adet gönderiniz bulunmakta!</b></marquee>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+                   <div class="panel panel-default">
+            <div class="panel-heading">
+                @Model.baslik başlıklı gönderi
+            </div>
+            <div class="panel-body" >
+
+                <dl class="dl-horizontal">
+                    
+                    <dt>
+                        Başlık:
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.baslik)
+                    </dd>
+                    
+                    <dt>
+                        İçerik:
+                    </dt>
+
+                    <dd>
+                        @proje_blog.Models.htmltemiz.HTMLTemizle(Model.gonderi)
+                    </dd>
+
+                    <dt>
+                        Gönderi Saati:
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.saat)
+                    </dd>
+
+                    <dt>
+                        Resim:
+                    </dt>
+                    <dd>
+                        <img src="@Model.resim" width="250" height="250" />
+                    </dd>
+
+                 
+
+                    <dt>
+                        Kategori:
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.kategoriler.kategori)
+                    </dd>
+                    <dt>
+                        Görüntüleme:
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.tiklanma_say)
+                    </dd>
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Güncelle", "Edit", new { id = Model.gonderiid }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Geri dön", "Index", new { @class = "btn btn-default" })
+            </p>
+        </div>
+    </div>
+</div>

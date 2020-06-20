@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyBlogSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="gonderiler">
+    <Key>
+      <PropertyRef Name="gonderiid" />
+    </Key>
+    <Property Name="gonderiid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar(max)" />
+    <Property Name="gonderi" Type="nvarchar(max)" />
+    <Property Name="saat" Type="datetime" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="katid" Type="int" />
+    <Property Name="tiklanma_say" Type="int" />
+    <Property Name="begenme" Type="int" />
+    <Property Name="asagilama" Type="int" />
+  </EntityType>
+  <EntityType Name="kategoriler">
+    <Key>
+      <PropertyRef Name="katid" />
+    </Key>
+    <Property Name="katid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kategori" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="kullanicilar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="hakkinda" Type="nvarchar(max)" />
+    <Property Name="telefon" Type="nvarchar" MaxLength="11" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="nick" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="mesajlar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mesaj" Type="nvarchar(max)" />
+    <Property Name="saat" Type="datetime" />
+    <Property Name="isim" Type="nvarchar" MaxLength="50" />
+    <Property Name="okundu" Type="bit" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="konu" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_gonderiler_kategoriler">
+    <End Role="kategoriler" Type="Self.kategoriler" Multiplicity="0..1" />
+    <End Role="gonderiler" Type="Self.gonderiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kategoriler">
+        <PropertyRef Name="katid" />
+      </Principal>
+      <Dependent Role="gonderiler">
+        <PropertyRef Name="katid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyBlogSiteModelStoreContainer">
+    <EntitySet Name="gonderiler" EntityType="Self.gonderiler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kategoriler" EntityType="Self.kategoriler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kullanicilar" EntityType="Self.kullanicilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesajlar" EntityType="Self.mesajlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_gonderiler_kategoriler" Association="Self.FK_gonderiler_kategoriler">
+      <End Role="kategoriler" EntitySet="kategoriler" />
+      <End Role="gonderiler" EntitySet="gonderiler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

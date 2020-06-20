@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyBlogSiteModelStoreContainer" CdmEntityContainer="MyBlogSiteEntities">
+    <EntitySetMapping Name="gonderiler">
+      <EntityTypeMapping TypeName="MyBlogSiteModel.gonderiler">
+        <MappingFragment StoreEntitySet="gonderiler">
+          <ScalarProperty Name="gonderiid" ColumnName="gonderiid" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="gonderi" ColumnName="gonderi" />
+          <ScalarProperty Name="saat" ColumnName="saat" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="katid" ColumnName="katid" />
+          <ScalarProperty Name="tiklanma_say" ColumnName="tiklanma_say" />
+          <ScalarProperty Name="begenme" ColumnName="begenme" />
+          <ScalarProperty Name="asagilama" ColumnName="asagilama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kategoriler">
+      <EntityTypeMapping TypeName="MyBlogSiteModel.kategoriler">
+        <MappingFragment StoreEntitySet="kategoriler">
+          <ScalarProperty Name="katid" ColumnName="katid" />
+          <ScalarProperty Name="kategori" ColumnName="kategori" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanicilar">
+      <EntityTypeMapping TypeName="MyBlogSiteModel.kullanicilar">
+        <MappingFragment StoreEntitySet="kullanicilar">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="hakkinda" ColumnName="hakkinda" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="nick" ColumnName="nick" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesajlar">
+      <EntityTypeMapping TypeName="MyBlogSiteModel.mesajlar">
+        <MappingFragment StoreEntitySet="mesajlar">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="mesaj" ColumnName="mesaj" />
+          <ScalarProperty Name="saat" ColumnName="saat" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="okundu" ColumnName="okundu" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="konu" ColumnName="konu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MyBlogSiteModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "yukle";
+    Layout = null;
+
+}
+
+<link href="~/Content/admin/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href="~/Content/admin/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+<link href="~/Content/admin/css/style.css" rel="stylesheet" />
+<link href="~/Content/admin/css/main-style.css" rel="stylesheet" />
+<link href="~/Content/admin/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+<script src="~/Content/admin/plugins/jquery-1.10.2.js"></script>
+<script src="~/Content/admin/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="~/Content/admin/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="~/Content/admin/scripts/siminta.js"></script>
+<script src="~/Content/admin/plugins/morris/morris.js"></script>
+<script src="~/Content/admin/plugins/morris/raphael-2.1.0.min.js"></script>
+<script src="~/Content/admin/scripts/dashboard-demo.js"></script>
+
+<div class="col-lg-12">
+    @using (Html.BeginForm(null, null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <input type="file" name="file" class="form-control" />
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Yükle</button>
+        </div>
+
+
+                    @ViewBag.resim
+
+    }
+</div>
+
+<script src="~/Content/admin/plugins/jquery-1.10.2.js"></script>
+<script src="~/Content/admin/plugins/bootstrap/bootstrap.min.js"></script>
+<script src="~/Content/admin/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="~/Content/admin/scripts/siminta.js"></script>
+<script src="~/Content/admin/plugins/morris/morris.js"></script>
+<script src="~/Content/admin/plugins/morris/raphael-2.1.0.min.js"></script>
+<script src="~/Content/admin/scripts/dashboard-demo.js"></script>

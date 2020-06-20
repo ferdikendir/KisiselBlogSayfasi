@@ -1,0 +1,87 @@
+﻿@model proje_blog.DAL.mesajlar
+
+@{
+    ViewBag.Title = "Mesaj sil";
+    Layout = "~/Views/Shared/_Layouttwo.cshtml";
+}
+
+<div id="page-wrapper">
+
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header">Mesaj Sil</h1>
+        </div>
+        <!--End Page Header -->
+        <div class="col-lg-12">
+            <div class="alert alert-info">
+                @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                {
+                    foreach (var item in db.kullanicilar.ToList())
+                    {
+                <marquee behavior=alternate><i class="fa fa-folder-open"></i><b>&nbsp;Merhaba ! </b><b>&nbsp;Hoş Geldiniz </b><b>@item.adi @item.soyadi</b></marquee>
+
+                <marquee behavior=alternate><i class="fa  fa-pencil"></i><b>&nbsp; @db.gonderiler.Count() </b><b>&nbsp;adet gönderiniz bulunmakta!</b></marquee>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <p>
+            <a href="/gonderilers/Create" class="btn btn-default">Gönderi Paylaş</a>
+        </p>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Model.isim
+            </div>
+            <div class="panel-body" style="overflow:auto;overflow-x:hidden;height:500px">
+                <h3>Mesajı silmek istediğinize emin misiniz?</h3>
+                <div>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Gönderici:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.isim)
+                        </dd>
+                        <dt>
+                            Mail:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.mail)
+                        </dd>
+                        <dt>
+                            Konu:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.konu)
+                        </dd>
+                        <dt>
+                            Mesaj İçeriği:
+                        </dt>
+
+                        <dd>
+                            @proje_blog.Models.htmltemiz.HTMLTemizle(Model.mesaj)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Sil" class="btn btn-danger" /> |
+                            @Html.ActionLink("İptal", "Index")
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

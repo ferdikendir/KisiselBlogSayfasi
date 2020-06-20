@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - FKendir.com-Admin</title>
+    <link href="~/Content/admin/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/admin/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/admin/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+    <link href="~/Content/admin/css/style.css" rel="stylesheet" />
+    <link href="~/Content/admin/css/main-style.css" rel="stylesheet" />
+    <link href="~/Content/admin/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="~/Content/admin/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!-- navbar top -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+            <!-- navbar-header -->
+            <div class="navbar-header">
+                
+                <a class="nav navbar-top-links navbar-left"style="margin-left:10px" href="/Admin/Anasayfa">
+
+                    <img src="~/Dosyalar/logo2.png" style="width:85px;height:80px" class=""/>
+                </a>
+            </div>
+            <!-- end navbar-header -->
+            <!-- navbar-top-links -->
+            @if (Session["Kullanici"] == "Admin")
+            {
+                <ul class="nav navbar-top-links navbar-right">
+                    <!-- main dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                            {
+                                int a = db.mesajlar.Where(x => x.okundu != true).Count();
+                                <span class="top-label label label-danger">@a</span><i class="fa fa-envelope fa-3x"></i>
+                            }
+
+                        </a>
+                        <!-- dropdown-messages -->
+                        <ul class="dropdown-menu dropdown-messages">
+                            @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                            {
+                                foreach (var mesaj in db.mesajlar.Where(x => x.okundu != true).OrderByDescending(x => x.saat).Take(3).ToList())
+                                {
+                                    <li>
+                                        <a href="/mesajlars/Details/@mesaj.id">
+                                            <div>
+                                                <strong><span class="label label-danger">@mesaj.konu</span></strong>
+                                                <span class="pull-right text-muted">
+                                                    <em>@mesaj.saat</em>
+                                                </span>
+                                            </div>
+                                                <div>
+                                                    @proje_blog.Models.htmltemiz.HTMLTemizler(mesaj.mesaj)
+                                                </div>
+                                            
+
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+
+                                }
+                            }
+
+                            <li>
+                                <a class="text-center" href="/mesajlars/Index">
+                                    <strong>Tüm mesajlar</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- end dropdown-messages -->
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-3x"></i>
+                        </a>
+                        <!-- dropdown user-->
+                        <ul class="dropdown-menu dropdown-user">
+                            <li>
+                                @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                                {
+                                    foreach (var kul in db.kullanicilar.ToList())
+                                    {@Html.ActionLink("Profil", "Details", "kullanicilars", new { kul.id }, new { @class = " fa fa-user fa-fw navbar-brand" }) }
+
+                                }
+
+                            </li>
+                            <li>
+                                <a href="/gonderilers/Create"><i class="fa fa-gear fa-fw"></i>Paylaş</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.ActionLink("Çıkış", "CikisYap", "Admin", null, new { @class = " fa fa-user fa-fw navbar-brand" })
+                                }
+                            </li>
+                        </ul>
+                        <!-- end dropdown-user -->
+                    </li>
+                    <!-- end main dropdown -->
+                </ul>
+            <!-- end navbar-top-links -->
+            }
+        </nav>
+    </div>
+    @if (Session["Kullanici"] == "Admin")
+    {
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <!-- sidebar-collapse -->
+            <div class="sidebar-collapse">
+                <!-- side-menu -->
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <!-- user image section-->
+                        <div class="user-section">
+                            @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                            {
+                                foreach (var kul in db.kullanicilar.ToList())
+                                {
+                                    <div class="user-section-inner">
+                                        <img src="@kul.resim" alt="">
+                                    </div>
+                                    <div class="user-info">
+                                        <div>@kul.adi <strong>@kul.soyadi</strong></div>
+                                        <div class="user-text-online">
+                                            <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Aktif
+                                        </div>
+                                    </div>
+
+                                }
+                            }
+
+                        </div>
+                        <!--end user image section-->
+                    </li>
+                    <li class="sidebar-search">
+                        <!-- search section-->
+                        @using (Html.BeginForm("Anasayfa", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            <div class="input-group custom-search-form">
+                                <input id="Aranacakkelime" name="Aranacakkelime" type="text" class="form-control" placeholder="Ara...">
+                                <span class="input-group-btn">
+                                    <button id="Aranacakkelime" class="btn btn-default" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        }
+                        <!--end search section-->
+                    </li>
+                    <li class="selected">
+                        <a href="/Admin/Anasayfa"><i class="fa fa-dashboard fa-fw"></i>Anasayfa</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o  fa-fw"></i> Mesajlar<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/Admin/GelenKutusu">Gelen Kutusu</a>
+                            </li>
+                            <li>
+                                <a href="/mesajlars/index">Tüm Mesajlar</a>
+                            </li>
+                        </ul>
+                        <!-- second-level-items -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Gönderiler<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                @Html.ActionLink("Gönderi Ekle", "Create", "gonderilers", new { }, new { htmlAttributes = new { @class = "btn" } })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Tüm Gönderiler", "Index", "gonderilers", new { }, new { htmlAttributes = new { @class = "btn" } })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Son Eklenenler", "Index", "gonderilers", new { sayi1 = 10 }, new { htmlAttributes = new { @class = "btn" } })
+                            </li>
+
+                            <li>
+                                @Html.ActionLink("En Çok Okunanlar", "Index", "gonderilers", new { sayi = 10 }, new { htmlAttributes = new { @class = "btn" } })
+
+                            </li>
+                        </ul>
+                        <!-- second-level-items -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Kategoriler<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                @Html.ActionLink("Kategori Ekle", "Create", "kategorilers", new { }, new { htmlAttributes = new { @class = "btn" } })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Tüm Kategoriler", "Index", "kategorilers", new { }, new { htmlAttributes = new { @class = "btn" } })
+                            </li>
+                        </ul>
+                        <!-- second-level-items -->
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    }
+    <div>
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Content/admin/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="~/Content/admin/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/Content/admin/scripts/siminta.js"></script>
+    <script src="~/Content/admin/plugins/morris/morris.js"></script>
+    <script src="~/Content/admin/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="~/Content/admin/scripts/dashboard-demo.js"></script>
+    <script src="~/Content/admin/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script src="~/Content/admin/plugins/dataTables/jquery.dataTables.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+    </script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({ selector: 'textarea' });</script>
+</body>
+</html>

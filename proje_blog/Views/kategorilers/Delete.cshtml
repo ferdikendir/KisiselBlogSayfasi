@@ -1,0 +1,61 @@
+﻿@model proje_blog.DAL.kategoriler
+
+@{
+    ViewBag.Title = "Kategori Sil";
+    Layout = "~/Views/Shared/_Layouttwo.cshtml";
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">Kategori Sil</h1>
+        </div>
+        <!--End Page Header -->
+        <div class="col-lg-12">
+            <div class="alert alert-info">
+                @using (proje_blog.DAL.MyBlogSiteEntities db = new proje_blog.DAL.MyBlogSiteEntities())
+                {
+                    foreach (var item in db.kullanicilar.ToList())
+                    {
+                        <marquee behavior=alternate><i class="fa fa-folder-open"></i><b>&nbsp;Merhaba ! </b><b>&nbsp;Hoş Geldiniz </b><b>@item.adi @item.soyadi</b></marquee>
+
+                        <marquee behavior=alternate><i class="fa  fa-pencil"></i><b>&nbsp; @db.gonderiler.Count() </b><b>&nbsp;adet gönderiniz bulunmakta!</b></marquee>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                @Model.kategori kategorisini paylaşımlarıyla birlikte silmek istiyor musunuz?
+            </div>
+            <div class="panel-body">
+                <div>
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Kategori:
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.kategori)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Sil" class="btn btn-danger" /> |
+                            @Html.ActionLink("İptal", "Index", new { @class = "btn btn-default" })
+                        </div>
+                    }
+                </div>
+            </div>
+            </div>
+</div>
+</div>
